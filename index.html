@@ -1156,23 +1156,23 @@
   });
 
   /* Chat app project: reliable open (file:// blocks many new-tab navigations; fallback if pop-up blocked) */
-  (function(){
-    const el = document.getElementById('project-chat-app');
-    if (!el) return;
-    el.addEventListener('click', function(e){
-      const url = this.href;
-      if (e.defaultPrevented) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-      if (window.location.protocol === 'file:') {
-        e.preventDefault();
-        window.location.assign(url);
-        return;
-      }
-      e.preventDefault();
-      const w = window.open(url, '_blank', 'noopener,noreferrer');
-      if (!w) window.location.assign(url);
-    });
-  })();
+  // (function(){
+  //   const el = document.getElementById('project-chat-app');
+  //   if (!el) return;
+  //   el.addEventListener('click', function(e){
+  //     const url = this.href;
+  //     if (e.defaultPrevented) return;
+  //     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+  //     if (window.location.protocol === 'file:') {
+  //       e.preventDefault();
+  //       window.location.assign(url);
+  //       return;
+  //     }
+  //     e.preventDefault();
+  //     const w = window.open(url, '_blank', 'noopener,noreferrer');
+  //     if (!w) window.location.assign(url);
+  //   });
+  // })();
 
   /* ─────────────────────────────────
      5. TYPING ANIMATION
